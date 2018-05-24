@@ -1,0 +1,40 @@
+@model MyBlog.Models.PostViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+
+<div class="container postcontent">
+
+  <div class="container-fluid">
+    <div class="span3"><h1><p class="posttitle">@Html.DisplayFor(model => model.Title)</p></h1></div>
+    
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="container-fluid">
+    <span class="postsummary"><img src="~/images/general/icons/open-icons/person.svg" width="12" height="12">  @Html.DisplayFor(model => model.Author)</span>
+    <span class="postsummary"><img src="~/images/general/icons/open-icons/clock.svg" width="12" height="12">  @Html.DisplayFor(model => model.DatePublished)</span>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
+      <span style="padding:5px;"><a asp-action="Edit" asp-route-id="@Model.PostId"><img src="~/images/general/icons/open-icons/pencil.svg" width="12" height="12"></a></span>
+      <span style="padding:5px;"><a asp-action="Delete" asp-route-id="@Model.PostId"><img src="~/images/general/icons/open-icons/delete.svg" width="12" height="12"></a></span>
+      }
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="container-fluid">
+    <span class="postabstract">@Html.Raw(Model.Abstract)</span>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <div class="container-fluid"> 
+    <span class="postmaintext">@Html.Raw(Model.Content)</span>
+  </div>
+
+</div>
+

@@ -1,0 +1,52 @@
+@model MyBlog.Models.PostViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<div>
+    <h4>Post delete confirmation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Abstract)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Abstract)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePublished)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DatePublished)
+        </dd>
+    </dl>
+    
+    <dl class="dl-horizontal">
+        <dt>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="PostId"/>
+                <input class="button buttonBlack" type="submit" value="Delete" />    
+            </form>
+
+        </dt>
+        <dd>
+            <a asp-action="Index" ><button class="button buttonBlack">Back to list</button></a>
+        </dd>
+    </dl>
+</div>

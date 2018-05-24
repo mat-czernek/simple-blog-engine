@@ -1,0 +1,144 @@
+@model MyBlog.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<span><br><br></span>
+
+<div class="container-fluid">
+
+    <div class="row">
+ 
+        <div class="col-sm-4 col-md-4 col-lg-4">
+
+            <div class='row'>
+                <div class="col-xs-12">
+                    <center>
+                        <a><img src="~/resources/general/@Html.DisplayFor(model => model.ProfilePhoto)" width="140" height="140" class="img-circle"></a>
+                        <h3>@Html.DisplayFor(model => model.BlogAuthor)</h3>
+                    </center>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class="col-xs-12">
+        
+                    <center>
+                        <span><a href="@Html.DisplayFor(model => model.GithubProfile)" target="_blank"><img src="~/images/general/icons/github.svg" width="20" height="20"  class="img-circle myimagefilter"></a></span>
+                        <span><a href="@Html.DisplayFor(model => model.LinkedinProfile)" target="_blank"><img src="~/images/general/icons/linkedin.png" width="20" height="20"  class="img-circle myimagefilter"></a></span>
+                        <span><a href="mailto:@Html.DisplayFor(model => model.Email)"><img src="~/images/general/icons/mail.png" width="20" height="20"  class="img-circle myimagefilter"></a></span>
+                    </center>
+                
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-8 col-md-8 col-lg-8">
+
+            <div class='row'>
+                <div class="col-xs-12">
+                    <h3>About me</h3>
+
+                    <span class="aboutme">
+                        @Html.Raw(Model.AboutAuthor)
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<div class="spacer-large"></div>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+ 
+        <div class="col-sm-4 col-md-4 col-lg-4">
+
+            <div class='row'>
+                <div class="col-xs-12">
+                    
+                    <!-- <div class="tagcloud05">
+                        <ul>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                             <li><a href="#"><span>Lorem ipsum dolor sit amet</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>tag</span></a></li>
+                            <li><a href="#"><span>consectetur adipisicing elit</span></a></li>
+                        </ul>
+                    </div> -->
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-8 col-md-8 col-lg-8">
+
+            <div class='row'>
+                <div class="col-xs-12">
+                    <span class="latest_posts_header"><h3>Latest from the blog</h3></span>
+                    <span class="nice_line"></span>
+                    <div class="recent-posts">
+                        <ul class="ulposts">
+                            @foreach(var post in Model.RecentPosts)
+                            { 
+                                <li style="line-height: 40px;"><article><img src="~/images/general/icons/open-icons/bookmark.svg" width="15" height="15" class="img-circle myimagefilter"><a asp-area="" asp-controller="Blog" asp-action="Details" asp-route-id="@post.Slug">@post.Title</a></article></li>
+                                
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+
+<!-- <div class="tagcloud05">
+	<ul>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>Lorem ipsum dolor sit amet</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>tag</span></a></li>
+		<li><a href="#"><span>consectetur adipisicing elit</span></a></li>
+	</ul>
+</div> -->

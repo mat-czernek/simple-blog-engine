@@ -1,0 +1,14 @@
+{
+  "DefaultUserData": {
+    "Firstname": "John",
+    "Lastname": "Doe",
+    "Email": "john.doe@mail.com",
+    "Password": "P@ssword12345",
+    "AboutAuthor": "Few words about the blog author",
+    "GithubProfile": "https://github.com/",
+    "LinkedinProfile": "https://linkedin.com/"
+  },
+  "DatabaseOptions": {
+    "ConnectionString": "BlogDatabase.sdb"
+  }
+}

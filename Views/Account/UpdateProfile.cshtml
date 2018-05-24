@@ -1,0 +1,65 @@
+@model MyBlog.Models.UserProfileModel
+
+
+<form asp-action="UpdateProfile" method="POST" enctype="multipart/form-data">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" style="width: 800px"/>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" style="width: 800px"/>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" style="width: 800px"/>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AboutAuthor" class="control-label"></label>
+        <textarea rows="4" cols="50" asp-for="AboutAuthor" class="form-control" style="height: 200px; width: 800px" ></textarea>
+        <span asp-validation-for="AboutAuthor" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GithubProfile" class="control-label"></label>
+        <input asp-for="GithubProfile" class="form-control" style="width: 800px"/>
+        <span asp-validation-for="GithubProfile" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LinkedinProfile" class="control-label"></label>
+        <input asp-for="LinkedinProfile" class="form-control" style="width: 800px"/>
+        <span asp-validation-for="LinkedinProfile" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProfileImageFile" class="control-label"></label>
+        <div class="spacer"></div>
+        <div>
+            <img src="~/resources/general/@Html.DisplayFor(model => model.ProfilePhoto)" width="140" height="140" class="img-circle">
+        </div>
+        <div class="spacer"></div>
+        <input type="file" name="ProfileImageFile" class="form-control" style="width:800px" />
+        <span asp-validation-for="ProfileImageFile" class="text-danger"></span>
+    </div>
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <input type="submit" value="Update profile" class="btn btn-default" />
+    </div>
+
+</form>
+
+
