@@ -10,13 +10,6 @@ Install all required dependencies by running this command:
 dontnet restore
 ```
 
-Run following command to setup the EF migrations and create database:
-
-```
-dotnet ef migrations add Initial
-```
-
-
 ###### Setup defaults
 
 Open customSettings.json file and configure default user data to seed database
@@ -39,3 +32,9 @@ Open customSettings.json file and configure default user data to seed database
 }
 ```
 
+
+Run following command to setup the EF migrations and create database:
+
+```
+dotnet ef migrations add Initial
+```
