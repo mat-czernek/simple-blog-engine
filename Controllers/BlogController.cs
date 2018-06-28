@@ -71,9 +71,16 @@ namespace MyBlog.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index(string searchString)
         {
-            List<PostViewModel> selectedPosts = await _databaseProvider.FindPosts(searchString);
+            if(string.IsNullOrEmpty(searchString))
+            {
+                return View(new List<PostViewModel>());
+            }
+            else
+            {
+                List<PostViewModel> selectedPosts = await _databaseProvider.FindPosts(searchString);
 
-            return View(selectedPosts);
+                return View(selectedPosts);
+            }
         }
 
         /// <summary>
