@@ -24,6 +24,19 @@
   <div ><h1><a class="posttitle" asp-action="Details" asp-route-Slug="@item.Slug"><p >@Html.DisplayFor(modelItem => item.Title)</p></a></h1></div>
   
   <div class="span3">
+      <ul class="tags">
+      @{
+        
+        foreach(var singleTag in item.Tags.Split(','))
+        { 
+          <li><a href="#" class="tag">@singleTag</a></li>
+        }
+        
+      }
+      </ul>
+  </div>
+
+  <div class="span3">
     @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
       <span style="padding:5px;"><a asp-action="Edit" asp-route-id="@item.PostId"><img src="~/images/general/icons/open-icons/pencil.svg" width="15" height="15"></a></span>
       <span style="padding:5px;"><a asp-action="Delete" asp-route-id="@item.PostId" ><img src="~/images/general/icons/open-icons/delete.svg" width="15" height="15"></a></span>
@@ -40,5 +53,15 @@
   <div class="span3"><a asp-action="Details" asp-route-Slug="@item.Slug"><button class="button buttonBlack">Read more</button></a></div>
 
 </div>
-<br><br>
+
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+  <span class="nice_line"></span>
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+<div class="spacer container"></div>
+
 }
