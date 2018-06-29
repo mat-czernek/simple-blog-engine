@@ -24,6 +24,8 @@ namespace MyBlog.Infrastructure
             str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
         
             str = Regex.Replace(str, @"\s+", " ").Trim();
+            str = str.Replace("-", string.Empty);
+            str = string.Join(" ", str.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries));
         
             str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
             str = Regex.Replace(str, @"\s", "-");

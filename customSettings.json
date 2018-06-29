@@ -1,12 +1,12 @@
 {
   "DefaultUserData": {
-    "Firstname": "John",
-    "Lastname": "Doe",
-    "Email": "john.doe@mail.com",
+    "Firstname": "Mateusz",
+    "Lastname": "Czernek",
+    "Email": "czernek.mateusz@gmail.com",
     "Password": "P@ssword12345",
-    "AboutAuthor": "Few words about the blog author",
-    "GithubProfile": "https://github.com/",
-    "LinkedinProfile": "https://linkedin.com/"
+    "AboutAuthor": "Happy father and husband. IBMer for over 10 years, currently at Advisory IT Specialist position. Big fan of .NET framework. I treat software development more like a hobby, but this might change one day... Exploring wide spectrum of IT technologies, starting from automation tools, going through mobile device management, ending on cloud solutions.\r\n\r\nI decided to create this blog for a simple reason - I needed motivation to sit down, learn something new and share my experience with others on the occasion. I hope you will find here something interesting and maybe even useful.",
+    "GithubProfile": "https://github.com/mat-czernek",
+    "LinkedinProfile": "https://linkedin.com/in/mateusz-czernek-a7037ab9"
   },
   "DatabaseOptions": {
     "ConnectionString": "BlogDatabase.sdb"
