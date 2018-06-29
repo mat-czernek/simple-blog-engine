@@ -27,7 +27,7 @@ namespace MyBlog.Infrastructure
             str = str.Replace("-", string.Empty);
             str = string.Join(" ", str.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries));
         
-            str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
+            str = str.Substring(0, str.Length <= 80 ? str.Length : 80).Trim();
             str = Regex.Replace(str, @"\s", "-");
 
             return str;
