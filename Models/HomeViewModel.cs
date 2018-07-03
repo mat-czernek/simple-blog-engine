@@ -13,7 +13,14 @@ namespace MyBlog.Models
         /// Gets or sets the list of most recent posts from blog
         /// </summary>
         /// <returns>List of most recent posts from blog</returns>
-        public List<PostViewModel> RecentPosts {get; set;}
+        public List<PostViewModel> RecentPosts { get; set;}
+
+
+        /// <summary>
+        /// Collection of tags
+        /// </summary>
+        /// <returns>List of tags</returns>
+        public List<string> TagsCloud {get; set;}
 
         /// <summary>
         /// Gets or sets the first and the last name of the blog author

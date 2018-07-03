@@ -15,8 +15,8 @@
   <div class="spacer"></div>
 
   <div class="container-fluid">
-    <span class="postsummary"><img src="~/images/general/icons/open-icons/person.svg" width="12" height="12">  @Html.DisplayFor(model => model.Author)</span>
-    <span class="postsummary"><img src="~/images/general/icons/open-icons/clock.svg" width="12" height="12">  @Html.DisplayFor(model => model.DatePublished)</span>
+    <span class="postsummary"><img src="~/images/general/icons/open-icons/person.svg" width="14" height="14">  @Html.DisplayFor(model => model.Author)</span>
+    <span class="postsummary"><img src="~/images/general/icons/open-icons/clock.svg" width="14" height="14">  @Html.DisplayFor(model => model.DatePublished)</span>
     @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
       <span style="padding:5px;"><a asp-action="Edit" asp-route-id="@Model.PostId"><img src="~/images/general/icons/open-icons/pencil.svg" width="12" height="12"></a></span>
       <span style="padding:5px;"><a asp-action="Delete" asp-route-id="@Model.PostId"><img src="~/images/general/icons/open-icons/delete.svg" width="12" height="12"></a></span>

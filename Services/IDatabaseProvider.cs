@@ -78,5 +78,20 @@ namespace MyBlog.Services
         /// <param name="slug">Post slug</param>
         /// <returns>Single post by slug</returns>
         Task<PostViewModel> GetPostBySlug(string slug);
+
+
+        /// <summary>
+        /// Gets list of post based on search tag
+        /// </summary>
+        /// <param name="tag">Tag name to be searched</param>
+        /// <returns>List of posts with maching tags</returns>
+        Task<List<PostViewModel>> GetByTag(string tag);
+
+        /// <summary>
+        /// Gets all tags defined in blog posts
+        /// </summary>
+        /// <param name="limit">Defines maximum number of tags retreived from database</param>
+        /// <returns>List of unique tags</returns>
+        Task<List<string>> GetUniqueTags(int? limit = null);
     }
 }

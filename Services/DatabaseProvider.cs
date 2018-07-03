@@ -72,6 +72,27 @@ namespace MyBlog.Services
         }
 
         /// <summary>
+        /// Gets all tags defined in blog posts
+        /// </summary>
+        /// <param name="limit">Defines maximum number of tags retreived from database</param>
+        /// <returns>List of unique tags</returns>
+        public async Task<List<string>> GetUniqueTags(int? limit = null)
+        {          
+            List<PostViewModel> allPosts = await _databaseContext.Posts.OrderByDescending(post => post.DatePublished).ToListAsync();
+
+            List<string> tags = new List<string>();
+
+            foreach(PostViewModel post in allPosts)
+            {
+                List<string> temp = post.Tags.Split(",").ToList();
+
+                tags = tags.Union(temp).ToList();
+            }
+
+            return tags;
+        }
+
+        /// <summary>
         /// Gest single post by id
         /// </summary>
         /// <param name="id">Post id</param>
@@ -90,6 +111,19 @@ namespace MyBlog.Services
         public async Task<PostViewModel> GetPostBySlug(string slug)
         {
             return await _databaseContext.Posts.SingleOrDefaultAsync(post => post.Slug == slug);
+        }
+
+
+        /// <summary>
+        /// Gets list of post based on search tag
+        /// </summary>
+        /// <param name="tag">Tag name to be searched</param>
+        /// <returns>List of posts with maching tags</returns>
+        public async Task<List<PostViewModel>> GetByTag(string tag)
+        {
+            CultureInfo culture = new CultureInfo("en");
+
+            return await _databaseContext.Posts.Where(post => culture.CompareInfo.IndexOf(post.Tags, tag, CompareOptions.IgnoreCase) >= 0).OrderByDescending(post => post.DatePublished).ToListAsync();
         }
 
         /// <summary>

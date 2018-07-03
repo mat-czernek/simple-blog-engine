@@ -79,7 +79,8 @@ namespace MyBlog.Controllers
                 LinkedinProfile = user.LinkedinProfile,
                 Email = user.Email,
                 AboutAuthor = _formatContent.NewLineToHTML(user.AboutAuthor),
-                ProfilePhoto = user.ProfilePhoto
+                ProfilePhoto = user.ProfilePhoto,
+                TagsCloud = await _databaseProvider.GetUniqueTags()
             };
 
             return View(model);

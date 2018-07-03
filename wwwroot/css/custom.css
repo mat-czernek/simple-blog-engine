@@ -99,7 +99,7 @@ A.postheader:hover {
 .postsummary{
     color: #111; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 10px; 
+    font-size: 12px; 
     line-height: 14px; 
     margin: 10px 10px 24px; 
     text-align: left; 
@@ -273,9 +273,9 @@ pre {
     margin: 10px 10px 10px;
     font-size: 12px;
     line-height: 0.7;
-    color: #000000;
+    color: #aaa; 
+    background-color: #222;
     word-break: break-all;
-    background-color: #faf8f0;
     border: 0.5px solid rgb(213, 214, 216);
 	white-space: pre-wrap;                 
 	white-space: -moz-pre-wrap !important; 
@@ -293,74 +293,6 @@ pre {
     border-radius: 0;
   }
 
-
- 
-
-.tagcloud05 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.tagcloud05 ul li {
-	display: inline-block;
-	margin: 0 0 .3em 1em;
-	padding: 0;
-}
-.tagcloud05 ul li a {
-	position: relative;
-	display: inline-block;
-	height: 30px;
-	line-height: 30px;
-	padding: 0 1em;
-	background-color: #3498db;
-	border-radius: 0 3px 3px 0;
-	color: #fff;
-	font-size: 13px;
-	text-decoration: none;
-	-webkit-transition: .2s;
-	transition: .2s;
-}
-.tagcloud05 ul li a::before {
-	position: absolute;
-	top: 0;
-	left: -15px;
-	content: '';
-	width: 0;
-	height: 0;
-	border-color: transparent #3498db transparent transparent;
-	border-style: solid;
-	border-width: 15px 15px 15px 0;
-	-webkit-transition: .2s;
-	transition: .2s;
-}
-.tagcloud05 ul li a::after {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	z-index: 2;
-	display: block;
-	content: '';
-	width: 6px;
-	height: 6px;
-	margin-top: -3px;
-	background-color: #fff;
-	border-radius: 100%;
-}
-.tagcloud05 ul li span {
-	display: block;
-	max-width: 100px;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-.tagcloud05 ul li a:hover {
-	background-color: #555;
-	color: #fff;
-}
-.tagcloud05 ul li a:hover::before {
-	border-right-color: #555;
-}
-
 .nice_line{ 
     display:block;
     border:none;
@@ -372,7 +304,7 @@ pre {
 
 .latest_posts_header
 {
-    color: #D1D1D1;
+    color: rgb(156, 154, 154);
     
 }
 .center {

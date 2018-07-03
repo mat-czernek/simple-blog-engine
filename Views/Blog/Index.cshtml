@@ -29,7 +29,7 @@
         
         foreach(var singleTag in item.Tags.Split(','))
         { 
-          <li><a href="#" class="tag">@singleTag</a></li>
+          <li><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@singleTag">@singleTag</a></li>   
         }
         
       }

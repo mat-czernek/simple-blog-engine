@@ -83,6 +83,23 @@ namespace MyBlog.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Displays view with posts selected by tag
+        /// </summary>
+        /// <param name="tag">Tag name to be searched</param>
+        /// <returns>View with post search results by post tags</returns>
+        [AllowAnonymous]
+        public async Task<IActionResult> SearchByTag(string tag)
+        {
+            if(string.IsNullOrEmpty(tag))
+                return View("Index", new List<PostViewModel>());
+            
+            List<PostViewModel> selectedPosts = await _databaseProvider.GetByTag(tag);
+
+            return View("Index", selectedPosts);
+        }
+
         /// <summary>
         /// Displays view with post details
         /// </summary>

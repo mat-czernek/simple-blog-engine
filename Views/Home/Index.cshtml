@@ -64,6 +64,12 @@
             <div class='row'>
                 <div class="col-xs-12">
                     
+                    <ul class="tags">
+                    @foreach(var tag in Model.TagsCloud)   
+                    {
+                        <li><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@tag">@tag</a></li>  
+                    } 
+                    </ul>               
 
                 </div>
             </div>
