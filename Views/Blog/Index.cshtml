@@ -5,7 +5,7 @@
 }
 
 <div class="container postcontent">
-  <form asp-action="Index" method="POST" style="width:90%;">
+  <form asp-action="Index" method="POST" >
 
     <input type="submit" value="Search" class="btn btn-primary btn-sm" style="float: right"/>
     <div style="overflow: hidden; padding-right: .5em;">
@@ -18,50 +18,58 @@
 <div class="spacer"></div>
 
 @foreach (var item in Model) {
- 
-<div class="container postcontent">
 
-  <div ><h1><a class="posttitle" asp-action="Details" asp-route-Slug="@item.Slug"><p >@Html.DisplayFor(modelItem => item.Title)</p></a></h1></div>
-  
-  <div class="span3">
-      <ul class="tags">
-      @{
-        
-        foreach(var singleTag in item.Tags.Split(','))
-        { 
-          <li><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@singleTag">@singleTag</a></li>   
-        }
-        
+  <div class="container postcontent" >
+
+    <div class="container-fluid">
+      <div class="span3"><h1><a class="posttitle" asp-action="Details" asp-route-Slug="@item.Slug"><p >@Html.DisplayFor(modelItem => item.Title)</p></a></h1></div>
+      
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container-fluid">
+        <ul class="tags">
+          @{
+            
+            foreach(var singleTag in item.Tags.Split(','))
+            { 
+              <li><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@singleTag">@singleTag</a></li>   
+            }
+            
+          }
+        </ul>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container-fluid">
+      @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
+        <span style="padding:5px;"><a asp-action="Edit" asp-route-id="@item.PostId"><img src="~/images/general/icons/open-icons/pencil.svg" width="15" height="15"></a></span>
+        <span style="padding:5px;"><a asp-action="Delete" asp-route-id="@item.PostId" ><img src="~/images/general/icons/open-icons/delete.svg" width="15" height="15"></a></span>
       }
-      </ul>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container-fluid">
+      <span class="postabstract">@Html.Raw(item.Abstract)</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container-fluid"><a asp-action="Details" asp-route-Slug="@item.Slug"><button class="button buttonBlack">Read more</button></a></div>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
   </div>
 
-  <div class="span3">
-    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
-      <span style="padding:5px;"><a asp-action="Edit" asp-route-id="@item.PostId"><img src="~/images/general/icons/open-icons/pencil.svg" width="15" height="15"></a></span>
-      <span style="padding:5px;"><a asp-action="Delete" asp-route-id="@item.PostId" ><img src="~/images/general/icons/open-icons/delete.svg" width="15" height="15"></a></span>
-    }
-  </div>
-
-  <div style="padding:10px;"></div>
-  
-  <div class="spacer container"></div>
-  <div class="postcontent"><span class="postabstract">@Html.Raw(item.Abstract)</span></div>
-
-  <div style="padding:10px;"></div>
-  
-  <div class="span3"><a asp-action="Details" asp-route-Slug="@item.Slug"><button class="button buttonBlack">Read more</button></a></div>
-
-</div>
-
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-  <span class="nice_line"></span>
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-<div class="spacer container"></div>
-
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="nice_line"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
 }
