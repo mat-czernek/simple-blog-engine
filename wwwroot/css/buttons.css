@@ -1,0 +1,29 @@
+.button-read-more {
+  margin-left: 15px;
+  font-size: 1.35rem;
+  padding: 1.25rem 2.5rem;
+  display: block;
+  background-color: #ffffff;
+
+  border-width: 1px; border-color: #009ac9;
+  color: #009ac9;
+  font-weight: 300;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.button-read-more:hover {
+  color: #ffffff;
+  background-color: #009ac9;
+  border: 1px thin transparent;
+  text-decoration: none;
+}
+
+
+
+

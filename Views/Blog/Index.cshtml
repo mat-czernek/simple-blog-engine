@@ -34,7 +34,7 @@
             
             foreach(var singleTag in item.Tags.Split(','))
             { 
-              <li><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@singleTag">@singleTag</a></li>   
+              <li ><a class="tag" asp-area="" asp-controller="Blog" asp-action="SearchByTag" asp-route-tag="@singleTag">@singleTag</a></li>   
             }
             
           }
@@ -54,12 +54,22 @@
 
     <div class="container-fluid">
       <span class="postabstract">@Html.Raw(item.Abstract)</span>
+      
     </div>
 
     <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <!-- <div class="container-fluid"><a asp-action="Details" asp-route-Slug="@item.Slug"><button class="button buttonBlack">Read more</button></a></div> -->
 
-    <div class="container-fluid"><a asp-action="Details" asp-route-Slug="@item.Slug"><button class="button buttonBlack">Read more</button></a></div>
+    <div class="container-fluid">
+    
+      <a class="readmore"  asp-action="Details" asp-route-Slug="@item.Slug">
+          Read more
+      </a>
 
+    </div>
+    
     <div class="spacer"></div>
     <div class="spacer"></div>
 
