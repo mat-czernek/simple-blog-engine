@@ -4,11 +4,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All"/>
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.1"/>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1"/>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0"/>
     <PackageReference Include="bootstrap" Version="4.1.1"/>
     <PackageReference Include="bootstrap.sass" Version="4.1.1"/>
   </ItemGroup>
